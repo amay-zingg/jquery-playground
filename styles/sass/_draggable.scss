@@ -1,0 +1,35 @@
+.container {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  border: 2px solid maroon;
+
+  @include flexbox(
+    $placeItems: center,
+    $placeContent: center,
+    $direction: row,
+    $wrap: wrap
+  );
+}
+
+.inner-box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  padding: 5px;
+  float: left;
+  margin: 5px;
+  @include fontSize(2.5rem);
+}
+
+.inner-box.box1 {
+  background-color: firebrick;
+}
+
+.inner-box.box2 {
+  background-color: tomato;
+}
+
+.inner-box.box3 {
+  background-color: orangered;
+}

@@ -5,12 +5,11 @@
 // };
 
 // * * * * DOCUMENT READY
-$(() => {
-    // init();
+// $(() => {
+//     // init();
 
-    $("p").draggable();
 
-}); // * * * * END OF DOCUMENT READY
+// }); // * * * * END OF DOCUMENT READY
 
 // * * * * SMOOTH SCROLLING ON SAME PAGE LINKS
 // const scroll = function () {

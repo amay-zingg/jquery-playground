@@ -6,29 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JQUERY Playground</title>
 
-    <!-- META INFO & SOCIAL SHARING -->
-    <!-- <meta name="description" content="">
-    <meta property="og:title" content="">
-    <meta property="og:image" content="./assets/photo.jpg"> -->
-
-    <!-- TWITTER CARD -->
-    <!-- <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="">
-    <meta name="twitter:creator" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="./assets/photo.jpg">
-    <meta name="twitter:image:alt"
-        content=""> -->
-
-    <!-- FAVICON -->
-    <!-- <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff"> -->
-
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -46,14 +23,22 @@
     <div class="wrapper">
         <main>
             <section>
-                <!-- Put project here -->
+                <div class="container">
+                    <div class="inner-box box1"></div>
+                    <div class="inner-box box2">
+                        <p>Click here!</p>
+                    </div>
+                    <div class="inner-box box3"></div>
+                    <p><a href="https://www.anastasiamay.com">Anastasia May</a> 2021</p>
+                    <p><a href="https://www.anastasiamay.com">Anastasia May</a> 2021</p>
+                </div>
+
             </section>
 
             <section class="section-2">
                 <header>
                     <h1>Draggable</h1>
-                    <p>What is it</p>
-                    <!-- <p><a href="https://www.anastasiamay.com">Anastasia May</a> 2021</p> -->
+                    <p>Learning how to use JQuery with tutorials!</p>
                 </header>
             </section>
 
@@ -73,13 +58,31 @@
     <!-- <script src="scripts/script.js"></script> -->
 
     <script>
-        // $(document).ready(function() {
-        //     $("p").draggable();
-        // });
-
         $(() => {
 
-            $("p").draggable();
+            // Can only move horizontally 
+            // $(".box1").draggable({axis: "x"});
+
+            // Can only move vertically 
+            // $(".box2").draggable({ axis: "y" });
+
+            // Can only move inside container
+            // $(".box3").draggable({ containment: ".container" });
+
+            // Select two things at the same time
+            // $(".inner-box, p").draggable({ containment: ".container" });
+
+            // Select two things at the same time, and make sure one thing cannot move
+            // $(".inner-box, p").draggable({ containment: ".container", cancel: ".box2" });
+
+            // Make sure one thing cannot move (same outcome as above, different way to select it)
+            // $("p:last-child").draggable({ disabled: true });
+
+            // Selection cursors, and where the cursor appears when dragging
+            $(".box1").draggable({ cursor: "grab", cursorAt: {left: 5, top: 5} });
+            // The item only moves when the p element is clicked, or {cancel: "p"} to restict movement if the p is clicked on
+            $(".box2").draggable({ cursor: "move", handle: "p" });
+            $(".box3").draggable({ cursor: "crosshair", cursorAt: { right: 5 }  });
 
         });
     </script>
