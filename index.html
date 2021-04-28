@@ -79,10 +79,17 @@
             // $("p:last-child").draggable({ disabled: true });
 
             // Selection cursors, and where the cursor appears when dragging
-            $(".box1").draggable({ cursor: "grab", cursorAt: {left: 5, top: 5} });
+            // $(".box1").draggable({ cursor: "grab", cursorAt: {left: 5, top: 5} });
+            
             // The item only moves when the p element is clicked, or {cancel: "p"} to restict movement if the p is clicked on
-            $(".box2").draggable({ cursor: "move", handle: "p" });
+            // $(".box2").draggable({ cursor: "move", handle: "p" });
             $(".box3").draggable({ cursor: "crosshair", cursorAt: { right: 5 }  });
+
+            // Jumping to the amount of pixels specified. (0 won't move left to right, 100px jump up and down)
+            $(".box1").draggable({ grid: [0,100] });
+
+            // Will move back to where it was dragged from
+             $(".box2").draggable({revert: true});
 
         });
     </script>
