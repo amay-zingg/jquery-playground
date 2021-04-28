@@ -89,13 +89,22 @@
             // $(".box1").draggable({ grid: [0,100] });
 
             // Will move back to where it was dragged from, duration is 500 by default
-             $(".box2").draggable({revert: true, revertDuration: 5000});
+            // $(".box2").draggable({revert: true, revertDuration: 5000});
 
             //Now change the way it looks
-             $(".box3").draggable({ revert: function(){$(".box3").css("background", "purple"); return true; }});
+            // $(".box3").draggable({ revert: function(){$(".box3").css("background", "purple"); return true; }});
 
             // Add a helper, a clone, 
-             $(".box1").draggable({ helper: "clone", opacity: .5 });
+            $(".box1").draggable({ helper: "clone", opacity: .5 });
+
+            // Helper with custom created Div, not a clone
+            $(".box2").draggable({ helper: function() { return $("<div style='border: 2px solid black; color: white, background: teal'><p>Custom Helper</p></div>")}});
+
+            // Snap is like a magnetic cling, snap tolerance is movement in px to edge of snappable elements
+            $(".box2").draggable({ snap: true, snapTolerance: 100 });
+
+            // Snap to an element and where it snaps to
+            $(".box3").draggable({ snap: ".inner-box", snapMode: "inner" });
 
         });
     </script>
