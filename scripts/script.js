@@ -47,4 +47,13 @@
     // Snap to an element and where it snaps to
     $(".box3").draggable({ snap: ".inner-box", snapMode: "inner" });
 
+    // * * * * NOW MAKING A BUTTON THAT MAKES THE BOX DRAGGABLE ON CLICK
+    $("#btn-create").click(function() {
+        $("#item").draggable({create:function(){
+            alert("A draggable element was created!");
+        }, 
+        start:function(){
+            $("#item").css("background", "teal");
+        }});
+    });
 });
