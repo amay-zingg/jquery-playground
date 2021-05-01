@@ -36,7 +36,7 @@
     // $(".box3").draggable({ revert: function(){$(".box3").css("background", "purple"); return true; }});
 
     // Add a helper, a clone, 
-    $(".box1").draggable({ helper: "clone", opacity: .5 });
+    // $(".box1").draggable({ helper: "clone", opacity: .5 });
 
     // Helper with custom created Div, not a clone
     $(".box2").draggable({ helper: function() { return $("<div style='border: 2px solid black; color: white, background: teal'><p>Custom Helper</p></div>")}});
@@ -54,6 +54,12 @@
         }, 
         start:function(){
             $("#item").css("background", "teal");
+        },
+        drag:function(){
+            $("#status").html("The element is moving!!");
+        },
+        stop:function(){
+            $("#status").html("The element stopped moving!!");
         }});
     });
 });
